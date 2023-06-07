@@ -16,6 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S3 Task 1 - Fetch Pokemon API</title>
+    <link rel="shortcut icon" href="assets/images/favicon/pikachu-2.png" type="image/x-icon">
 
     <!-- Bootstrap -->
     <link
@@ -25,41 +26,37 @@
       crossorigin="anonymous"
     />
 
+    <!-- DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
 
 </head>
-<body>
+<body class="bg-dark">
     <div id="container" class="container mt-3">
-        <h1 class="fw-bold">List Pokemon</h1>
-        <table class="table table-striped table-hover text-center">
+        <h1 class="fw-bold text-center text-white" data-aos="zoom-in-down" data-aos-offset="500" data-aos-duration="2000">List Pokemon</h1>
+        <table id="pokeTable" class="table table-striped table-hover table-dark text-center" data-aos="fade-up" data-aos-duration="2000">
             <thead class="table-dark">
                 <tr>
                     <th scope="col" class="col-1">No.</th>
                     <th scope="col" class="col-2">Name</th>
-                    <th scope="col" class="col-3">Gender</th>
+                    <th scope="col" class="col-3">URL</th>
                     <th scope="col" class="col-3">Action</th>
                 </tr>
             </thead>
-            <tbody id="tbodySW"></tbody>
+            <tbody id="tbodySW"   ></tbody>
         </table>
     </div>
 
-    <div
-    class="modal fade"
-    id="staticBackdrop"
-    data-bs-backdrop="static"
-    data-bs-keyboard="false"
-    tabindex="-1"
-    aria-labelledby="staticBackdropLabel"
-    aria-hidden="true"
-  >
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5 fw-bold" id="staticBackdropLabel">
-            Detail Star Wars
-          </h1>
+          <h1 class="modal-title fs-5 fw-bold" id="staticBackdropLabel">Pokemon's Detail</h1>
         </div>
         <div class="modal-body" id="bodySW"></div>
         <div class="modal-footer">
@@ -86,7 +83,16 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Data Tables -->
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+
+    <!-- Initialize AOS -->
+    <script>AOS.init();</script>
+
     <!-- Custom JS -->
-    <script src="index.js"></script>
+    <script src="/assets/js/index.js"></script>
 </body>
 </html>
