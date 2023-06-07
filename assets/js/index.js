@@ -47,6 +47,8 @@ function detail(value) {
       $.each(response.abilities, function (key, value) {
         $("#bodyPoke").html(value.ability.name);
       });
+      $("#bodyPoke").append("<br>");
+      $("#bodyPoke").append(response.height);
     },
   });
 }
