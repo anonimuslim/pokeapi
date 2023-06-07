@@ -27,7 +27,7 @@ $.ajax({
             </tr>
             `;
     });
-    $("#tbodySW").html(text);
+    $("#tbodyPoke").html(text);
   },
   error: function (error) {
     setTimeout(function () {
@@ -45,7 +45,7 @@ function detail(value) {
     url: value,
     success: function (response) {
       $.each(response.abilities, function (key, value) {
-        $("#bodySW").html(value.ability.name);
+        $("#bodyPoke").html(value.ability.name);
       });
     },
   });
