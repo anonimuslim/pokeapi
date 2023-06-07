@@ -4,30 +4,25 @@ $.ajax({
   success: function (response) {
     let text = "";
     $.each(response.results, function (key, value) {
-      text += `
-            <tr>
-                <td>${key + 1}</td>
-                <td class="text-capitalize">${value.name}</td>
-                <td><a href="${
-                  value.url
-                }" target="_blank" rel="noopener noreferrer">${
-        value.url
-      }</a></td>
-                <td>
-                    <button
-                    type="button"
-                    class="btn btn-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop"
-                    onclick="detail('${value.url}')"
-                    >
-                    Detail
-                    </button>
-                </td>
-            </tr>
-            `;
+      // bikin $.ajax lagi buat ngambil data dari https://endpoint/{id} karena butuh data height dan weight
+      $.ajax({
+        url: value.url,
+        success: function(pokemon){
+          text += `
+              <tr>
+                  <td>${key + 1}</td>
+                  <td class="text-capitalize">${value.name}</td>
+                  <td>${pokemon.height}</td>
+                  <td>${pokemon.weight}</td>
+                  <td>
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="detail('${value.url}')">Detail</button>
+                  </td>
+              </tr>
+          `;
+          $("#tbodyPoke").html(text);
+        }
+      });
     });
-    $("#tbodyPoke").html(text);
   },
   error: function (error) {
     setTimeout(function () {
