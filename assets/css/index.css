@@ -6,6 +6,26 @@
   font-family: "Poppins", sans-serif;
 }
 
+/* Atur PokeFont Custom untuk judul Dashboard */
+@font-face {
+  font-family: 'PokeFontSolid';
+  src: url('/assets/poke-font/Pokemon Solid.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PokeFontHollow';
+  src: url('/assets/poke-font/Pokemon Hollow.ttf') format('truetype');
+}
+
+#dashTitle-1 {
+  font-family: 'PokeFontHollow';
+  color: yellow;
+}
+
+#dashTitle-2 {
+  font-family: 'PokeFontSolid';
+}
+
 /* Perbesar ukuran font nama pokemon di modal (dalam file index.js) */
 #pokeName{
   text-transform: uppercase;
