@@ -1,3 +1,7 @@
+/* 
+Author: Anonimuslim
+Date: Wed Jun 7 15:40:08 2023 +0700
+*/
 $.ajax({
   url: "https://pokeapi.co/api/v2/pokemon",
   type: "GET", // tidak wajib karena default=GET
@@ -12,7 +16,7 @@ $.ajax({
         success: function(data){
           text += `
               <tr>
-                  <td>${key + 1}</td>
+                  <td>${key + 1}.</td>
                   <td class="text-capitalize">${value.name}</td>
                   <td>${data.height}</td>
                   <td>${data.weight}</td>
@@ -64,23 +68,25 @@ function detail(value) {
       Speed: success -> hijau
       */
       let progressColor = ["bg-danger","bg-warning","bg-info","bg-warning","bg-info","bg-success"];
-      let details = "";
+      let details1 = "";
+      let details2 = "";
 
-      details = `
-      <div id="modalBody" class="row me-2 ms-2 d-flex align-items-center">
+      details1 = `
+      <div id="modalBody-1" class="row me-2 ms-2 d-flex align-items-center">
           <p id="pokeName" class="text-center badge bg-warning hvr-wobble-bottom">${response.forms[0].name}</p>
           <div class="col-6 text-center">
             <img src='${response.sprites.other.dream_world.front_default}' title='Gambar Pokemon ${response.forms[0].name}' alt='Gambar Pokemon ${response.forms[0].name}' class="hvr-grow">
-            <p><span class="badge bg-success mt-4 text-center hvr-wobble-horizontal">Kenalin, dia ${response.forms[0].name}, comel kan? <img src="/assets/images/laughing.png" width=17/></span></p>
+            <p><span class="badge bg-success mt-4 text-center hvr-wobble-horizontal">Kenalin, dia <span class="text-capitalize">${response.forms[0].name}</span>, comel kan? <img src="/assets/images/laughing.png" width=17/></span></p>
           </div>
 
           <div class="col-6">
+            <p id="modalBody-1-title">Stats Info</p>
             <div class="row border rounded-4">
               <div class="col mt-4">
                 ${(() => {
                   let titles = '';
                   for (let index = 0; index < statsTitle.length; index++) {
-                    titles += `<p><span class="hvr-bounce-in">${statsTitle[index]}</span></p>`;
+                    titles += `<p><span class="badge ${progressColor[index]} hvr-bounce-in">${statsTitle[index]}</span></p>`;
                   }
                   return titles;
                 })()}
@@ -101,12 +107,37 @@ function detail(value) {
               </div>
             </div>
           </div>
-          <hr class="lineCustom">
-          <p>Hello world!</p>
         </div>
       `;
       
-      $("#bodyPoke").html(details);
+      // Tampung hasil fetch data type dulu, tujuannya biar elemen html ga ikut ke loop
+      const typeNames = response.types.map((pokeType) => pokeType.type.name.charAt(0).toUpperCase() + pokeType.type.name.slice(1));
+      
+      // masukan data yang udah ditampung ke elemen html details2
+      response.types.forEach((pokeType) => {
+        details2 = `
+          <hr class="lineCustom">
+          <div id="modalBody-2" class="row justify-content-md-center text-center">
+            <p id="modalBody-2-title">General Info</p>
+            <br>
+            <div class="col-lg-2">
+              <p class="bedge bg-danger rounded"><b>Poke Types</b></p>
+              <p class="bedge bg-warning rounded"><b>EXP</b></p>
+              <p class="bedge bg-light text-primary rounded"><b>Ability</b></p>
+              <p class="bedge bg-light text-success rounded"><b>Species</b></p>
+            </div>
+            <div class="col-lg-4">
+            <p class="bedge bg-light text-danger fw-bold rounded">${typeNames.join(', ')}</p>
+            <p class="bedge bg-light text-warning fw-bold rounded">${response.base_experience}</p>
+            <p class="bedge bg-primary rounded fw-bold text-capitalize">${response.abilities.map((ability) => `${ability.ability.name}`).join(', ')}</p>
+            <p class="bedge bg-success rounded fw-bold text-capitalize">${response.species.name}</p>
+            </div>
+          </div>
+        `;
+      });
+      
+      $("#bodyPoke").html(details1);
+      $("#bodyPoke").append(details2);
 
       // $.each(response.abilities, function (key, value) {
       //   ability += `<p>${value.ability.name}</p>`;
@@ -119,6 +150,13 @@ function detail(value) {
     },
   });
 }
+
+// Escape Modal
+$(document).on('keydown', function (event) {
+  if (event.key === "Escape") {
+    $('.modal').modal('hide');
+  }
+});
 
 /* Untuk looping progress bar, tapi masih perlu diperbaiki
 ${(() => {
