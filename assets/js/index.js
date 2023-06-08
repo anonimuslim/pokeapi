@@ -54,6 +54,7 @@ function detail(value) {
   $.ajax({
     url: value,
     success: function (response) {
+      let statsTitle = ["HP","Attack","Defense","Special Attack","Special Defense","Speed"];
       let details = "";
       let ability = "";
 
@@ -68,12 +69,13 @@ function detail(value) {
           <div class="col-6">
             <div class="row border rounded-4">
               <div id="statsTitle" class="col mt-4">
-                <p>HP</p>
-                <p>Attack</p>
-                <p>Defense</p>
-                <p>Special Attack</p>
-                <p>Special Defense</p>
-                <p>Speed</p>
+              ${(() => {
+                let titles = '';
+                for (let index = 0; index < statsTitle.length; index++) {
+                  titles += `<p>${statsTitle[index]}</p>`;
+                }
+                return titles;
+              })()}
               </div>
               <div class="col mt-4">
                 <div class="progress" role="progressbar" aria-label="${response.stats[0].stat.name}" aria-valuenow="${response.stats[0].base_stat}" aria-valuemin="0" aria-valuemax="100">
@@ -120,3 +122,16 @@ function detail(value) {
     },
   });
 }
+
+/* Untuk looping progress bar, tapi masih perlu diperbaiki
+${(() => {
+  let progressColor = ["bg-info","bg-danger","bg-warning","bg-success","bg-dark"];
+  for (let index = 0; index < progressColor.length; index++) {
+    titles += `<p>${stats[index]}</p>`;
+  }
+  return titles;
+})()}
+
+Kali ini untuk statsTitlenya: tidak dipakai karena seperti ada margin top yang menyebabkan tidak sejajar dengan progress bar
+<p>${statsTitle.map(title => `<p>${title}</p>`).join('')}</p>
+*/
