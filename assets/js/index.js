@@ -122,14 +122,14 @@ function detail(value) {
             <br>
             <div class="col-lg-2">
               <p class="bedge bg-danger rounded"><b>Poke Types</b></p>
-              <p class="bedge bg-warning rounded"><b>EXP</b></p>
-              <p class="bedge bg-light text-primary rounded"><b>Ability</b></p>
+              <p class="bedge bg-light text-warning rounded"><b>EXP</b></p>
+              <p class="bedge text-light bg-primary rounded"><b>Ability</b></p>
               <p class="bedge bg-light text-success rounded"><b>Species</b></p>
             </div>
             <div class="col-lg-4">
             <p class="bedge bg-light text-danger fw-bold rounded">${typeNames.join(', ')}</p>
-            <p class="bedge bg-light text-warning fw-bold rounded">${response.base_experience}</p>
-            <p class="bedge bg-primary rounded fw-bold text-capitalize">${response.abilities.map((ability) => `${ability.ability.name}`).join(', ')}</p>
+            <p class="bedge text-light bg-warning fw-bold rounded">${response.base_experience}</p>
+            <p class="bedge bg-light text-primary rounded fw-bold text-capitalize">${response.abilities.map((ability) => `${ability.ability.name}`).join(', ')}</p>
             <p class="bedge bg-success rounded fw-bold text-capitalize">${response.species.name}</p>
             </div>
           </div>
