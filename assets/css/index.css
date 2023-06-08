@@ -1,57 +1,56 @@
+/* Import Google Font */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap");
 
+/* Atur font ke seluruh element */
 * {
   font-family: "Poppins", sans-serif;
 }
 
+/* Perbesar ukuran font nama pokemon di modal (dalam file index.js) */
 #pokeName{
   text-transform: uppercase;
   font-weight: bolder;
   font-size: xx-large;
 }
 
+/* Ganti font di modal */
 #modalBody{
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-#statsTitle{
   color:white;
 }
-/* Ganti warna latar belakang pagination */
-/* .dataTables_wrapper .dataTables_paginate .paginate_button {
-  background-color: #f8f9fa;
-} */
+/* Custom Line di modal */
+.lineCustom {
+  border: none;
+  border-top: 3px solid #fff; /* Ganti dengan warna yang diinginkan */
+  margin: 20px 0; /* Sesuaikan dengan jarak atas dan bawah yang diinginkan */
+}
 
-/* Ganti warna teks di pagination */
-/* .dataTables_wrapper .dataTables_paginate .paginate_button.current,
-.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-  color: #333;
-} */
+/* Ganti warna show entries */
+.form-select{
+  background-color: #212529;
+  color: white;
+}
+
+/* Ganti warna "Show Entries" dan "Search" */
+.dataTables_length,label{
+  color: white;
+}
 
 /* Ganti warna kotak pencarian */
 .dataTables_wrapper .dataTables_filter input[type="search"] {
-  background-color: #f8f9fa;
-  color: blue;
+  background-color: #212529;
+  color: white;
+}
+
+/* Ganti warna latar belakang dan teks di pagination */
+#pokeTable_paginate .paginate_button{
+  /* background-color: #212529; */
+  color: red;
 }
 
 /* Kasih jarak buat tabel sama paginationnya */
 
-
-
-/* html,
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.container {
-  width: 100%;
-  height: 100vh;
-  display: grid;
-  grid-template: repeat(15, 1fr) / repeat(15, 1fr);
-} */
-
+/* Kasih efek icon haert di footer */
 .footer {
   color: white;
   text-align: center;
@@ -73,3 +72,17 @@ body {
   color: red;
   animation: heartBeat 1s infinite;
 }
+
+/* html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template: repeat(15, 1fr) / repeat(15, 1fr);
+} */
