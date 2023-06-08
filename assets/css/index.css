@@ -63,12 +63,27 @@
 }
 
 /* Ganti warna latar belakang dan teks di pagination */
-#pokeTable_paginate .paginate_button{
-  /* background-color: #212529; */
-  color: red;
+.dataTables_wrapper .dataTables_paginate .paginate_button .page-link {
+  background-color: #212529; /* Warna latar belakang */
+  border-color: #dee2e6; /* Warna border saat dihover */
+  border: 2px solid #343a40; /* Border solid dengan warna */
+  color: #ffffff; /* Warna teks saat dihover */
+  margin-top: 10px; /* Jarak dengan elemen di atasnya */
+  padding: 5px 10px; /* Padding untuk memberikan ruang di dalam tombol */
 }
 
-/* Kasih jarak buat tabel sama paginationnya */
+/* Ganti warna latar belakang dan teks di pagination saat di hover*/
+.dataTables_wrapper .dataTables_paginate .paginate_button .page-link:hover {
+  background-color: #fff; /* Warna latar belakang */
+  color: #000; /* Warna teks saat dihover */
+}
+
+/* Ganti warna latar belakang dan teks di pagination saat disabled*/
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled .page-link {
+  color: #6a7784; /* Warna teks tombol non-aktif */
+  border-color: #343a40; /* Warna border tombol non-aktif */
+  cursor: default; /* Menghilangkan cursor pointer pada tombol non-aktif */
+}
 
 /* Kasih efek icon haert di footer */
 .footer {
