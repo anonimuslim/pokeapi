@@ -27,63 +27,89 @@
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/f39f34aa4b.js" crossorigin="anonymous"></script>
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/assets/css/index.css">
 
 </head>
 <body class="bg-dark">
-    <div id="container" class="container mt-3">
-        <h1 class="fw-bold text-center text-white" data-aos="zoom-in-down" data-aos-offset="500" data-aos-duration="2000">List Pokemon</h1>
-        <div data-aos="fade-up" data-aos-duration="1500">
-          <table id="pokeTable" class="table table-striped table-hover table-dark text-center border-light">
-              <thead class="table-light">
-                  <tr>
-                      <th scope="col" class="col-1">No.</th>
-                      <th scope="col" class="col-2">Name</th>
-                      <th scope="col" class="col-3">Height</th>
-                      <th scope="col" class="col-3">Weight</th>
-                      <th scope="col" class="col-3">Action</th>
-                  </tr>
-              </thead>
-              <tbody id="tbodyPoke"   ></tbody>
-          </table>
-        </div>
-    </div>
+  <!-- Tabel -->
+  <div id="container" class="container mt-3">
+    <h1 class="fw-bold text-center text-white" data-aos="zoom-in-down" data-aos-offset="500" data-aos-duration="2000">List Pokemon</h1>
+      <div data-aos="fade-up" data-aos-duration="1500">
+        <table id="pokeTable" class="table table-striped table-hover table-dark text-center border-light">
+            <thead class="table-active table-dark">
+                <tr>
+                    <th scope="col" class="col-1">No.</th>
+                    <th scope="col" class="col-2">Name</th>
+                    <th scope="col" class="col-3">Height</th>
+                    <th scope="col" class="col-3">Weight</th>
+                    <th scope="col" class="col-3">Action</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyPoke"></tbody>
+            <!-- <tfoot class="table-borderless table-dark">
+              <tr>
+                  <th scope="col" class="col-1">No.</th>
+                  <th scope="col" class="col-2">Name</th>
+                  <th scope="col" class="col-3">Height</th>
+                  <th scope="col" class="col-3">Weight</th>
+                  <th scope="col" class="col-3">Action</th>
+              </tr>
+          </tfoot> -->
+        </table>
 
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5 fw-bold" id="staticBackdropLabel">Pokemon's Detail</h1>
+        <footer class="footer">
+          <div class="footer-content">
+            <p>Created with <i class="fa fa-heart"></i> by Anonimuslim</p>
           </div>
-          <div class="modal-body" id="bodyPoke"></div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
+        </footer>
+
+        <!-- START TES BIKIN ISI MODAL BIAR CEPET NULIS HTMLNYA -->
+        <!-- END TES BIKIN ISI MODAL BIAR CEPET NULIS HTMLNYA -->
+      </div>
+  </div>
+  
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 fw-bold" id="staticBackdropLabel">Pokemon's Detail</h1>
+        </div>
+        <div class="modal-body" id="bodyPoke"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </div>
 
-    <!-- Initialize AOS -->
-    <script>AOS.init();</script>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- Data Tables -->
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+  <!-- Initialize AOS -->
+  <script>AOS.init();</script>
 
-    <!-- Bootstrap -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-      crossorigin="anonymous"
-    ></script>
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 
-    <!-- Custom JS -->
-    <script src="/assets/js/index.js"></script>
+  <!-- Data Tables -->
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- Custom JS -->
+  <script src="/assets/js/index.js"></script>
 </body>
 </html>
