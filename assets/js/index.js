@@ -154,7 +154,8 @@ function detail(value) {
 // Escape Modal
 $(document).on('keydown', function (event) {
   if (event.key === "Escape") {
-    $('.modal').modal('hide');
+    // $('.modal').modal('hide');
+    $('#close').trigger('click');
   }
 });
 
