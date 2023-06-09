@@ -76,7 +76,7 @@ function detail(value) {
           <p id="pokeName" class="text-center badge bg-warning hvr-wobble-bottom">${response.forms[0].name}</p>
           <div class="col-6 text-center">
             <img src='${response.sprites.other.dream_world.front_default}' title='Gambar Pokemon ${response.forms[0].name}' alt='Gambar Pokemon ${response.forms[0].name}' class="hvr-grow">
-            <p><span class="badge bg-success mt-4 text-center hvr-wobble-horizontal">Kenalin, dia <span class="text-capitalize">${response.forms[0].name}</span>, comel kan? <img src="/assets/images/laughing.png" width=17/></span></p>
+            <p><span class="badge bg-success mt-4 text-center hvr-wobble-horizontal">Kenalin, dia <span class="text-capitalize">${response.forms[0].name}</span>, comel kan? <img src="assets/images/laughing.png" width=17/></span></p>
           </div>
 
           <div class="col-6">
