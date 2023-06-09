@@ -16,12 +16,12 @@ Sumber font: https://www.dafont.com/pokemon.font
 */
 @font-face {
   font-family: 'PokeFontSolid';
-  src: url('/assets/poke-font/Pokemon Solid.ttf') format('truetype');
+  src: url('assets/poke-font/Pokemon Solid.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'PokeFontHollow';
-  src: url('/assets/poke-font/Pokemon Hollow.ttf') format('truetype');
+  src: url('assets/poke-font/Pokemon Hollow.ttf') format('truetype');
 }
 
 #dashTitle-1 {
